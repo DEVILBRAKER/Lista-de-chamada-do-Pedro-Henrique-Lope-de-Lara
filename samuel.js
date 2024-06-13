@@ -1,42 +1,54 @@
+const numeros = [
+    { numero: 1 }, { numero: 2 }, { numero: 3 }, { numero: 4 }, { numero: 5 },
+    { numero: 6 }, { numero: 7 }, { numero: 8 }, { numero: 9 }, { numero: 10 },
+    { numero: 11 }, { numero: 12 }, { numero: 13 }, { numero: 14 }, { numero: 15 },
+    { numero: 16 }, { numero: 17 }, { numero: 18 }, { numero: 19 }, { numero: 21 },
+    { numero: 22 }, { numero: 23 }, { numero: 24 }, { numero: 26 },{ numero: 27 }, { numero: 28 },
+    { numero: 29 }, { numero: 30 }, { numero: 31 }, { numero: 32 }, { numero: 33 },
+    
+];
+
 const listaDeChamada = [
-    { numero: 1, nome: "ANA CAROLINA PONTAROLO CARVALHO" },
-    { numero: 2, nome: "ANA HELOISE MONTERO DA SILVA" },
-    { numero: 3, nome: "ANA LUIZA DA SILVA NOGUEIRA" },
-    { numero: 4, nome: "ANDRE CARDIN SOARES" },
-    { numero: 5, nome: "BEATRIZ BRANDT VIANA" },
-    { numero: 6, nome: "BHIANCA MULDENBERGER PINTO" },
-    { numero: 7, nome: "CAUAN JUN KESHINO" },
-    { numero: 8, nome: "ELIA GABRIEL VIERA" },
-    { numero: 9, nome: "ENZO SAMUEL LISBOA ZORDENUNES" },
-    { numero: 10, nome: "GIOVANNA CALDEIRA" },
-    { numero: 11, nome: "HENRIQUE DUARTE DOS SANTOS" },
-    { numero: 12, nome: "HENRIQUE EMILIO SILVA KRUGER" },
-    { numero: 13, nome: "IAGO DANIEL CALIXTO" },
-    { numero: 14, nome: "IASMIN APARECIDA DA SILVA PEREIRA" },
-    { numero: 15, nome: "ISADORA CRISTINA SILVEIRA" },
-    { numero: 16, nome: "JHENYFER GUIMARÃES DE LARA" },
-    { numero: 17, nome: "JOAO FRANCISCO KUJIV" },
-    { numero: 18, nome: "JOÃO HENRIQUE MORAIS DE ASSIS" },
-    { numero: 19, nome: "LORENZO HENRIQUE BENIN" },
-    { numero: 21, nome: "LUIZ FELIPE DO ROSARIO DE PAULA" },
-    { numero: 22, nome: "LUIZ GUSTAVO BRASIL" },
-    { numero: 23, nome: "MARIA JULIA AMORIM DA SEVA" },
-    { numero: 24, nome: "MARIA LUYZA MENDES DA SILVA LEAL" },
-    { numero: 26, nome: "PAOLA RAFAELA DOS SANTOS AMARAL" },
-    { numero: 28, nome: "RENATO GABRIEL VIANA STRAUBE" },
-    { numero: 29, nome: "RICHARD CARRARO" },
-    { numero: 30, nome: "VICTOR DE PAULA" },
-    { numero: 31, nome: "VINICIUS BORTOLI" },
-    { numero: 32, nome: "WILLIAN NOVAES BITTENCOURT" },
-    { numero: 33, nome: "THAISSA COSTA ALVES" },
-    {numero: 34, nome: "KHAILLANE ARAUJO"},
+    { nome: "ANA CAROLINA PONTAROLO CARVALHO" },
+    { nome: "ANA HELOISE MONTERO DA SILVA" },
+    { nome: "ANA LUIZA DA SILVA NOGUEIRA" },
+    { nome: "ANDRE CARDIN SOARES" },
+    { nome: "BEATRIZ BRANDT VIANA" },
+    { nome: "BHIANCA MULDENBERGER PINTO" },
+    { nome: "CAUAN JUN KESHINO" },
+    { nome: "ELIA GABRIEL VIERA" },
+    { nome: "ENZO SAMUEL LISBOA ZORDENUNES" },
+    { nome: "GIOVANNA CALDEIRA" },
+    { nome: "HENRIQUE DUARTE DOS SANTOS" },
+    { nome: "HENRIQUE EMILIO SILVA KRUGER" },
+    { nome: "IAGO DANIEL CALIXTO" },
+    { nome: "IASMIN APARECIDA DA SILVA PEREIRA" },
+    { nome: "ISADORA CRISTINA SILVEIRA" },
+    { nome: "JHENYFER GUIMARÃES DE LARA" },
+    { nome: "JOAO FRANCISCO KUJIV" },
+    { nome: "JOÃO HENRIQUE MORAIS DE ASSIS" },
+    { nome: "LORENZO HENRIQUE BENIN" },
+    { nome: "LUIZ FELIPE DO ROSARIO DE PAULA" },
+    { nome: "LUIZ GUSTAVO BRASIL" },
+    { nome: "MARIA JULIA AMORIM DA SEVA" },
+    { nome: "MARIA LUYZA MENDES DA SILVA LEAL" },
+    { nome: "PAOLA RAFAELA DOS SANTOS AMARAL" },
+    { nome: "KHAILLANE ARAUJO" },
+    { nome: "RENATO GABRIEL VIANA STRAUBE" },
+    { nome: "RICHARD CARRARO" },
+    { nome: "VICTOR DE PAULA" },
+    { nome: "VINICIUS BORTOLI" },
+    { nome: "WILLIAN NOVAES BITTENCOURT" },
+    { nome: "THAISSA COSTA ALVES" },
+    
 ];
 
 
-const novaListaDeChamada = listaDeChamada.filter(aluno => aluno.nome !== "KHAILLANE ARAUJO");
-novaListaDeChamada.push({ numero: 27, nome: "PEDRO HENRIQUE LOPES DE LARA" });
-
+const novaListaDeChamada = listaDeChamada.map((aluno, index) => {
+    if (aluno.nome === "KHAILLANE ARAUJO") {
+        return { nome: "PEDRO HENRIQUE LOPES DE LARA", numero: numeros[index].numero };
+    }
+    return { ...aluno, numero: numeros[index].numero };
+});
 
 console.log(novaListaDeChamada);
-
-
